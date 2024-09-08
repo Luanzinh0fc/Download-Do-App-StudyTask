@@ -58,11 +58,20 @@
         }
         .app-info {
             flex-grow: 1;
+            display: flex;
+            align-items: center;
         }
         .app-title {
             font-size: 24px;
             margin: 0;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .verified-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
         }
         .developer {
             color: #b0b0b0;
@@ -179,7 +188,9 @@
             <div class="header">
                 <img src="https://www.appcreator24.com/srv/imgs/gen/3190723_ico.png?v=28" alt="StudyTask Icon" class="app-icon">
                 <div class="app-info">
-                    <h1 class="app-title">StudyTask</h1>
+                    <h1 class="app-title">StudyTask
+                        <img src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png" alt="Verificado" class="verified-icon">
+                    </h1>
                     <p class="developer">Desenvolvido por StudyTask Inc.</p>
                 </div>
             </div>
@@ -242,7 +253,7 @@
             installingMessage.style.display = 'block';
             setTimeout(() => {
                 installingMessage.style.display = 'none';
-                window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=29';
+                window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=32';
             }, 3000);
         });
     </script>
