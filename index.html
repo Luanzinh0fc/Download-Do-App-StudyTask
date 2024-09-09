@@ -58,8 +58,6 @@
         }
         .app-info {
             flex-grow: 1;
-            display: flex;
-            align-items: center;
         }
         .app-title {
             font-size: 24px;
@@ -133,7 +131,6 @@
             text-align: center;
             margin-top: 20px;
         }
-        /* Estilos para o modal de imagem ampliada */
         .modal {
             display: none;
             position: fixed;
@@ -180,8 +177,7 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=ffffff" alt="Ícone">
-        StudyTask - Apps no Google Play
+        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=ffffff" alt="Ícone">Google Apps
     </div>
     <div class="content">
         <div class="container">
@@ -197,12 +193,19 @@
             <button class="install-button" id="downloadButton">Instalar</button>
             <div id="installingMessage" class="installing">Instalando...</div>
             <div class="description">
-                <h2>Sobre este app</h2>
+                <h2>Descubra o Poder da Organização com o StudyTask!</h2>
                 <p>
-                    StudyTask é um aplicativo desenvolvido com segurança e criptografia avançada para garantir a proteção dos seus dados. Nossa equipe dedicou-se a proporcionar uma experiência rápida e eficiente, com um desenvolvimento detalhado para atender às suas necessidades. A interface intuitiva e moderna facilita o uso diário, tornando suas tarefas de estudo mais organizadas e produtivas.
+                    Acesse o Google Play e transforme sua rotina de estudos com o StudyTask, o aplicativo que vem revolucionando a maneira como você organiza suas tarefas acadêmicas. Desenvolvido pela StudyTask Inc., este app é um aliado indispensável para estudantes que buscam eficiência e segurança em seus planejamentos.
                 </p>
+                <h3>Características Principais:</h3>
+                <ul>
+                    <li><strong>Segurança Avançada:</strong> Proteja seus dados com criptografia de ponta, garantindo que suas informações estejam sempre seguras.</li>
+                    <li><strong>Experiência Rápida e Eficiente:</strong> Com um design intuitivo e moderno, o StudyTask proporciona uma navegação fluida que facilita o uso diário.</li>
+                    <li><strong>Organização de Tarefas:</strong> A interface do aplicativo é projetada para otimizar a gestão das suas atividades, ajudando você a manter o foco e aumentar a produtividade.</li>
+                    <li><strong>Compatibilidade Inicial com Android:</strong> Aproveite todos os recursos do StudyTask em seu dispositivo Android. Fique atento para a versão iOS, que está em desenvolvimento!</li>
+                </ul>
                 <p>
-                    Baixe agora e comprove a qualidade de um aplicativo seguro, livre de vírus e desenvolvido com tecnologia de ponta. Disponível inicialmente para Android, com uma versão para iOS em desenvolvimento.
+                    Experimente a qualidade de um aplicativo desenvolvido com tecnologia de ponta e livre de vírus. Instale agora mesmo e comprove a diferença em sua rotina de estudos.
                 </p>
             </div>
             <div class="screenshots">
@@ -223,28 +226,24 @@
         </div>
     </div>
 
-    <!-- Modal para exibir imagem ampliada -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
     <script>
-        // Função para abrir o modal com a imagem clicada
         function openModal(imgElement) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("modalImage");
             modal.style.display = "block";
             modalImg.src = imgElement.src;
         }
-
-        // Função para fechar o modal
+        
         function closeModal() {
             var modal = document.getElementById("imageModal");
             modal.style.display = "none";
         }
-
-        // Função para mostrar a mensagem de instalação
+        
         document.getElementById('downloadButton').addEventListener('click', function() {
             var button = this;
             var installingMessage = document.getElementById('installingMessage');
