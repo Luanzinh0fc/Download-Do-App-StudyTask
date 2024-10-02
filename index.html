@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyTask - Apps no Google Play</title>
+    <title>StudyTask - Aplicativos</title>
+
+    <!-- Meta tags para compartilhamento social -->
+    <meta property="og:title" content="StudyTask - Aplicativos">
+    <meta property="og:description" content="Novidades: agora estamos disponíveis para Android e iOS.">
+    <meta property="og:image" content="https://www.appcreator24.com/srv/imgs/gen/3190723_ico.png?v=28">
+    <meta property="og:url" content="URL_DO_SEU_SITE">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -77,6 +85,9 @@
             font-size: 16px;
         }
         .install-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #007bff;
             color: #ffffff;
             padding: 15px;
@@ -88,6 +99,11 @@
             width: 100%;
             margin-top: 20px;
             text-transform: uppercase;
+        }
+        .install-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
         .install-button:hover {
             background-color: #0056b3;
@@ -177,7 +193,7 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=ffffff" alt="Ícone">Google Apps
+        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=ffffff" alt="Ícone">Aplicativos StudyTask
     </div>
     <div class="content">
         <div class="container">
@@ -190,19 +206,23 @@
                     <p class="developer">Desenvolvido por StudyTask Inc.</p>
                 </div>
             </div>
-            <button class="install-button" id="downloadButton">Instalar</button>
+            <button class="install-button" id="downloadAndroid">
+                <img src="https://cdn-icons-png.flaticon.com/128/11104/11104171.png" alt="Android Icon">Baixar para Android
+            </button>
+            <button class="install-button" id="downloadIOS">
+                <img src="https://cdn-icons-png.flaticon.com/128/270/270781.png" alt="iOS Icon">Baixar para iOS
+            </button>
             <div id="installingMessage" class="installing">Instalando...</div>
             <div class="description">
                 <h2>Descubra o Poder da Organização com o StudyTask!</h2>
                 <p>
-                    Acesse o Google Play e transforme sua rotina de estudos com o StudyTask, o aplicativo que vem revolucionando a maneira como você organiza suas tarefas acadêmicas. Desenvolvido pela StudyTask Inc., este app é um aliado indispensável para estudantes que buscam eficiência e segurança em seus planejamentos.
+                    Transforme sua rotina de estudos com o StudyTask, o aplicativo que vem revolucionando a maneira como você organiza suas tarefas acadêmicas. Desenvolvido pela StudyTask Inc., este app é um aliado indispensável para estudantes que buscam eficiência e segurança em seus planejamentos.
                 </p>
                 <h3>Características Principais:</h3>
                 <ul>
                     <li><strong>Segurança Avançada:</strong> Proteja seus dados com criptografia de ponta, garantindo que suas informações estejam sempre seguras.</li>
                     <li><strong>Experiência Rápida e Eficiente:</strong> Com um design intuitivo e moderno, o StudyTask proporciona uma navegação fluida que facilita o uso diário.</li>
                     <li><strong>Organização de Tarefas:</strong> A interface do aplicativo é projetada para otimizar a gestão das suas atividades, ajudando você a manter o foco e aumentar a produtividade.</li>
-                    <li><strong>Compatibilidade Inicial com Android:</strong> Aproveite todos os recursos do StudyTask em seu dispositivo Android. Fique atento para a versão iOS, que está em desenvolvimento!</li>
                 </ul>
                 <p>
                     Experimente a qualidade de um aplicativo desenvolvido com tecnologia de ponta e livre de vírus. Instale agora mesmo e comprove a diferença em sua rotina de estudos.
@@ -210,19 +230,12 @@
             </div>
             <div class="screenshots">
                 <div class="screenshot">
-                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/PRIN-TS-StudyTask/main/Nome%20StudyTask.jpg" alt="Screenshot 1" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/Luanzinh0fc-Banco-de-dados-p-blicos/refs/heads/main/Screenshot_20241002_170844.jpg" alt="Screenshot 1" onclick="openModal(this)">
                 </div>
                 <div class="screenshot">
-                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/PRIN-TS-StudyTask/main/LISTAS.jpg" alt="Screenshot 2" onclick="openModal(this)">
-                </div>
-                <div class="screenshot">
-                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/PRIN-TS-StudyTask/main/PRIN%2C%20TS%20(1).jpg" alt="Screenshot 3" onclick="openModal(this)">
-                </div>
-                <div class="screenshot">
-                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/PRIN-TS-StudyTask/main/PRIN%2C%20TS%20(3).jpg" alt="Screenshot 4" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/Luanzinh0fc-Banco-de-dados-p-blicos/refs/heads/main/Screenshot_20241002_170905.jpg" alt="Screenshot 2" onclick="openModal(this)">
                 </div>
             </div>
-            <div class="alert" id="alertMessage">O aplicativo no momento só é compatível com Android. Estamos desenvolvendo para iOS.</div>
         </div>
     </div>
 
@@ -244,7 +257,7 @@
             modal.style.display = "none";
         }
         
-        document.getElementById('downloadButton').addEventListener('click', function() {
+        document.getElementById('downloadAndroid').addEventListener('click', function() {
             var button = this;
             var installingMessage = document.getElementById('installingMessage');
             button.style.pointerEvents = 'none';
@@ -252,7 +265,19 @@
             installingMessage.style.display = 'block';
             setTimeout(() => {
                 installingMessage.style.display = 'none';
-                window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=32';
+                window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=33';
+            }, 3000);
+        });
+
+        document.getElementById('downloadIOS').addEventListener('click', function() {
+            var button = this;
+            var installingMessage = document.getElementById('installingMessage');
+            button.style.pointerEvents = 'none';
+            button.style.backgroundColor = '#0056b3';
+            installingMessage.style.display = 'block';
+            setTimeout(() => {
+                installingMessage.style.display = 'none';
+                window.location.href = 'https://raw.githubusercontent.com/StudyTask-ai/Download-IOS/refs/heads/main/StudyTask.tar-1';
             }, 3000);
         });
     </script>
