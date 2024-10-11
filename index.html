@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo StudyTask</title>
+    <title>Plataforma StudyTask</title>
 
     <!-- Meta tags para compartilhamento social -->
-    <meta property="og:title" content="Aplicativo StudyTask - Aplicativos">
+    <meta property="og:title" content="Plataforma StudyTask - Aplicativos">
     <meta property="og:description" content="Novidades: agora estamos disponíveis para Android e iOS.">
     <meta property="og:image" content="https://www.appcreator24.com/srv/imgs/gen/3190723_ico.png?v=28">
     <meta property="og:url" content="URL_DO_SEU_SITE">
@@ -22,13 +22,14 @@
             color: #e0e0e0;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .navbar {
-            background-color: #1f1f1f;
+            background: linear-gradient(135deg, #6a1b9a, #000000);
             color: #ffffff;
-            padding: 15px 20px;
+            padding: 10px 15px;
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -36,84 +37,107 @@
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        .navbar img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
         .content {
-            padding: 70px 20px 20px;
+            padding: 70px 15px 15px;
             max-width: 900px;
             margin: 0 auto;
+            background: linear-gradient(135deg, #1e1e1e, #000000);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-in-out;
         }
         .container {
-            background: #1e1e1e;
+            background: rgba(30, 30, 30, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            padding: 20px;
+            padding: 15px;
             color: #ffffff;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
         }
         .header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
         .app-icon {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 8px;
-            margin-right: 20px;
+            margin-right: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+        .app-icon:hover {
+            transform: scale(1.1);
         }
         .app-info {
             flex-grow: 1;
         }
         .app-title {
-            font-size: 24px;
+            font-size: 20px;
             margin: 0;
             font-weight: bold;
             display: flex;
             align-items: center;
+            background: linear-gradient(to right, #6a1b9a, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .verified-icon {
-            width: 24px;
-            height: 24px;
-            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
         }
         .developer {
             color: #b0b0b0;
             margin-top: 5px;
-            font-size: 16px;
+            font-size: 14px;
         }
         .install-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #007bff;
+            background: linear-gradient(135deg, #6a1b9a, #000000);
             color: #ffffff;
-            padding: 15px;
+            padding: 12px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            transition: transform 0.3s, background-color 0.3s ease;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 15px;
             text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
         }
         .install-button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            transition: transform 0.3s;
         }
         .install-button:hover {
-            background-color: #0056b3;
+            background: linear-gradient(135deg, #4a148c, #000000);
+            transform: translateY(-2px);
+        }
+        .install-button:active img {
+            transform: scale(1.2);
         }
         .description {
-            margin-top: 20px;
+            margin-top: 15px;
             line-height: 1.6;
+            font-size: 14px;
+            border-left: 4px solid #6a1b9a;
+            padding-left: 10px;
+            transition: border-color 0.3s ease;
+        }
+        .description:hover {
+            border-color: #4a148c;
         }
         .screenshots {
             display: flex;
@@ -122,33 +146,32 @@
         }
         .screenshot {
             flex: 1;
-            margin: 10px;
-            max-width: calc(50% - 20px);
+            margin: 5px;
+            max-width: calc(50% - 10px);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .screenshot:hover {
+            transform: scale(1.05);
         }
         .screenshot img {
             width: 100%;
             height: auto;
             display: block;
         }
-        .alert {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f8d7da;
-            color: #721c24;
-            border-radius: 8px;
-            font-size: 16px;
-            text-align: center;
-        }
         .installing {
             display: none;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 16px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #6a1b9a, #000000);
+            padding: 10px;
+            border-radius: 8px;
+            animation: slideDown 0.5s ease-in-out;
         }
         .modal {
             display: none;
@@ -160,43 +183,112 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
         }
         .modal-content {
             margin: auto;
             display: block;
             max-width: 90%;
             max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
         .close {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 10px;
+            right: 20px;
             color: #ffffff;
-            font-size: 35px;
+            font-size: 30px;
             font-weight: bold;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        /* Novo estilo para o modal de escolha */
+        .modal-choice {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .modal-content-choice {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #ffffff;
+            max-width: 280px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            animation: scaleUp 0.5s ease-in-out;
+            position: relative;
+        }
+        .modal-button {
+            background: linear-gradient(135deg, #6a1b9a, #000000);
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 8px 0;
+            width: 100%;
+            transition: transform 0.3s, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        .modal-button:hover {
+            background: linear-gradient(135deg, #4a148c, #000000);
+            transform: translateY(-2px);
+        }
+        .modal-button:active {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
         }
         @media (max-width: 600px) {
             .navbar {
-                font-size: 18px;
+                font-size: 16px;
             }
             .app-icon {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
             }
             .install-button {
-                font-size: 16px;
-                padding: 12px;
+                font-size: 14px;
+                padding: 10px;
             }
             .screenshot {
                 max-width: 100%;
+            }
+            .container {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=ffffff" alt="Ícone">Aplicativo StudyTask
+        Plataforma StudyTask
     </div>
     <div class="content">
         <div class="container">
@@ -217,12 +309,12 @@
             </button>
             <div id="installingMessage" class="installing">Instalando...</div>
             <div class="description">
-                <h2>Descubra o Poder da Organização com o StudyTask!</h2>
+                <h2 style="background: linear-gradient(to right, #6a1b9a, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Descubra o Poder da Organização com o StudyTask!</h2>
                 <p>
-                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/Luanzinh0fc-Banco-de-dados-p-blicos/main/1000008714-removebg.png" alt="Ícone Organize suas tarefas" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+                    <img src="https://raw.githubusercontent.com/Luanzinh0fc/Luanzinh0fc-Banco-de-dados-p-blicos/main/1000008714-removebg.png" alt="Ícone Organize suas tarefas" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 6px;">
                     Transforme sua rotina de estudos com o StudyTask, o aplicativo que vem revolucionando a maneira como você organiza suas tarefas acadêmicas. Desenvolvido pela StudyTask Inc., este app é um aliado indispensável para estudantes que buscam eficiência e segurança em seus planejamentos.
                 </p>
-                <h3>Características Principais:</h3>
+                <h3 style="background: linear-gradient(to right, #6a1b9a, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Características Principais:</h3>
                 <ul>
                     <li><strong>Segurança Avançada:</strong> Proteja seus dados com criptografia de ponta, garantindo que suas informações estejam sempre seguras.</li>
                     <li><strong>Experiência Rápida e Eficiente:</strong> Com um design intuitivo e moderno, o StudyTask proporciona uma navegação fluida que facilita o uso diário.</li>
@@ -248,6 +340,15 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+    <!-- Modal para escolha de dispositivo -->
+    <div id="deviceChoiceModal" class="modal-choice">
+        <div class="modal-content-choice">
+            <h2>Escolha seu Dispositivo</h2>
+            <button class="modal-button" id="smartphoneChoice">Smartphone</button>
+            <button class="modal-button" id="tabletChoice">Tablet</button>
+        </div>
+    </div>
+
     <script>
         function openModal(imgElement) {
             var modal = document.getElementById("imageModal");
@@ -262,14 +363,26 @@
         }
         
         document.getElementById('downloadAndroid').addEventListener('click', function() {
-            var button = this;
+            document.getElementById('deviceChoiceModal').style.display = 'flex';
+        });
+
+        document.getElementById('smartphoneChoice').addEventListener('click', function() {
+            document.getElementById('deviceChoiceModal').style.display = 'none';
             var installingMessage = document.getElementById('installingMessage');
-            button.style.pointerEvents = 'none';
-            button.style.backgroundColor = '#0056b3';
             installingMessage.style.display = 'block';
             setTimeout(() => {
                 installingMessage.style.display = 'none';
                 window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=33';
+            }, 3000);
+        });
+
+        document.getElementById('tabletChoice').addEventListener('click', function() {
+            document.getElementById('deviceChoiceModal').style.display = 'none';
+            var installingMessage = document.getElementById('installingMessage');
+            installingMessage.style.display = 'block';
+            setTimeout(() => {
+                installingMessage.style.display = 'none';
+                window.location.href = 'https://apk.e-droid.net/apk/app3324001-ktcspw.apk?v=3';
             }, 3000);
         });
 
@@ -286,4 +399,4 @@
         });
     </script>
 </body>
-</html
+</html>
