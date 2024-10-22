@@ -207,52 +207,6 @@
         .close:hover {
             transform: rotate(90deg);
         }
-        /* Novo estilo para o modal de escolha */
-        .modal-choice {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .modal-content-choice {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            color: #ffffff;
-            max-width: 280px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            animation: scaleUp 0.5s ease-in-out;
-            position: relative;
-        }
-        .modal-button {
-            background: linear-gradient(135deg, #6a1b9a, #000000);
-            color: #ffffff;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 8px 0;
-            width: 100%;
-            transition: transform 0.3s, background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        }
-        .modal-button:hover {
-            background: linear-gradient(135deg, #4a148c, #000000);
-            transform: translateY(-2px);
-        }
-        .modal-button:active {
-            transform: scale(1.1);
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -260,10 +214,6 @@
         @keyframes slideDown {
             from { transform: translateY(-10px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes scaleUp {
-            from { transform: scale(0.8); }
-            to { transform: scale(1); }
         }
         @media (max-width: 600px) {
             .navbar {
@@ -340,15 +290,6 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- Modal para escolha de dispositivo -->
-    <div id="deviceChoiceModal" class="modal-choice">
-        <div class="modal-content-choice">
-            <h2>Escolha seu Dispositivo</h2>
-            <button class="modal-button" id="smartphoneChoice">Smartphone</button>
-            <button class="modal-button" id="tabletChoice">Tablet</button>
-        </div>
-    </div>
-
     <script>
         function openModal(imgElement) {
             var modal = document.getElementById("imageModal");
@@ -363,26 +304,11 @@
         }
         
         document.getElementById('downloadAndroid').addEventListener('click', function() {
-            document.getElementById('deviceChoiceModal').style.display = 'flex';
-        });
-
-        document.getElementById('smartphoneChoice').addEventListener('click', function() {
-            document.getElementById('deviceChoiceModal').style.display = 'none';
             var installingMessage = document.getElementById('installingMessage');
             installingMessage.style.display = 'block';
             setTimeout(() => {
                 installingMessage.style.display = 'none';
                 window.location.href = 'https://apk.e-droid.net/apk/app3190723-8zqnmu.apk?v=33';
-            }, 3000);
-        });
-
-        document.getElementById('tabletChoice').addEventListener('click', function() {
-            document.getElementById('deviceChoiceModal').style.display = 'none';
-            var installingMessage = document.getElementById('installingMessage');
-            installingMessage.style.display = 'block';
-            setTimeout(() => {
-                installingMessage.style.display = 'none';
-                window.location.href = 'https://apk.e-droid.net/apk/app3324001-ktcspw.apk?v=3';
             }, 3000);
         });
 
